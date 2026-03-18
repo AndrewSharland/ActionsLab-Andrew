@@ -1,0 +1,28 @@
+name: Build and Test Pipeline - Andrew
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Step
+        run: |
+          echo "Starting build process..."
+          sleep 3
+          echo "Build completed successfully"
+          echo "Built by Andrew"
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test Step
+        run: |
+          echo "Running automated tests..."
+          sleep 2
+          date
+          echo "All tests passed for Andrew"
